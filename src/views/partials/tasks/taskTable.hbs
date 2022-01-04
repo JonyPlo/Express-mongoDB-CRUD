@@ -1,0 +1,28 @@
+<table>
+  <thead>
+    <tr>
+      <th>N.</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Operations</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each tasks}}
+      {{! La funcion #each es como un for para recorrer arreglos de objetos etc, dicha funcion pertenece a express-handlebars y el arreglo de objetos "tasks" lo obtenemos desde la peticion get en el controlador de las rutas }}
+      <tr>
+        <td>{{@index}}</td>{{! @index proviene de #each }}
+        <td>{{title}}</td>
+        <td>{{description}}</td>
+        <td>
+
+          <button>Done</button>
+          <button>Delete</button>
+          <a href="/edit/{{_id}}">Update</a>
+        </td>
+      </tr>
+
+    {{/each}}
+  </tbody>
+
+</table>
