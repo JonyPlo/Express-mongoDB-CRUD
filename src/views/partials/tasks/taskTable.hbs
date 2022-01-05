@@ -16,9 +16,14 @@
         <td>{{description}}</td>
         <td>
 
-          <button>Done</button>
-          <button>Delete</button>
-          <a href="/edit/{{_id}}">Update</a>
+           {{#if done}} {{!-- Asi se crea una condicional con express-handlebars --}}
+          <a href="/task/{{_id}}/toggleDone">Undone</a>
+          {{else}}
+          <a href="/task/{{_id}}/toggleDone">Done</a>
+          {{/if}}
+
+          <a href="/task/{{_id}}/delete">Delete</a>
+          <a href="/task/{{_id}}/edit">Update</a>
         </td>
       </tr>
 
