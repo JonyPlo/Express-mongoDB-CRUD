@@ -2,7 +2,7 @@ import Task from "../models/Task";
 const taskCtrl = {};
 
 taskCtrl.getTask = async (req, res) => {
-  const tasks = await Task.find().lean(); //Con la funcion lean() le estoy diciendo a mongo que me devuelva los objetos en un formato tipico para podes recoorerlos en cualquier parte sin ningun problema, en general le decimos que ya no nos devuelva objetos de mongoDB si no objetos de javascript
+  const tasks = await Task.find().lean(); //Con la funcion lean() le estoy diciendo a mongo que me devuelva los objetos en un formato tipico para poder reconocerlos en cualquier parte sin ningun problema, en general le decimos que ya no nos devuelva objetos de mongoDB si no objetos de javascript
   res.render("index", { tasks: tasks });
 };
 
